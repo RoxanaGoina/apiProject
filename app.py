@@ -23,4 +23,5 @@ def calculate_sum():
     return jsonify({"sum": total})
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8080)
+    port = int(os.environ.get('PORT', 8080))  # Render va specifica portul în variabila de mediu
+    app.run(host='0.0.0.0', port=port)
